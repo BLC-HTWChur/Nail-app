@@ -14,6 +14,7 @@
 		68CD9A292010E70B000A2407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68CD9A282010E70B000A2407 /* Assets.xcassets */; };
 		68CD9A2C2010E70B000A2407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68CD9A2A2010E70B000A2407 /* LaunchScreen.storyboard */; };
 		68CD9A372010E70B000A2407 /* Nail_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CD9A362010E70B000A2407 /* Nail_appTests.swift */; };
+		68CD9A422010F0A6000A2407 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CD9A412010F0A6000A2407 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		68CD9A322010E70B000A2407 /* Nail-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nail-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68CD9A362010E70B000A2407 /* Nail_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nail_appTests.swift; sourceTree = "<group>"; };
 		68CD9A382010E70B000A2407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68CD9A412010F0A6000A2407 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				68CD9A1E2010E70B000A2407 /* AppDelegate.swift */,
 				68CD9A202010E70B000A2407 /* ViewController.swift */,
+				68CD9A412010F0A6000A2407 /* ProfileViewController.swift */,
 				68CD9A222010E70B000A2407 /* Main.storyboard */,
 				68CD9A282010E70B000A2407 /* Assets.xcassets */,
 				68CD9A2A2010E70B000A2407 /* LaunchScreen.storyboard */,
@@ -204,6 +207,7 @@
 			files = (
 				68CD9A272010E70B000A2407 /* Nail_app.xcdatamodeld in Sources */,
 				68CD9A212010E70B000A2407 /* ViewController.swift in Sources */,
+				68CD9A422010F0A6000A2407 /* ProfileViewController.swift in Sources */,
 				68CD9A1F2010E70B000A2407 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
