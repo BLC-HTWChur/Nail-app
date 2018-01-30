@@ -25,8 +25,13 @@ class ViewController: UIViewController {
     
     @IBAction func showToken(_ sender: Any) {
         
-        let activityVC = UIActivityViewController(activityItems: ["aaaa"], applicationActivities: nil)
-        self.present(activityVC, animated: true, completion: nil)
+        
+        let activityVC = UIActivityViewController(activityItems: ["org.moodle.moodle_mobile_app"], applicationActivities : nil)
+        
+        DispatchQueue.main.async {
+            self.present(activityVC, animated: true, completion: nil)
+        }
+        
         
         activityVC.completionWithItemsHandler = {
             activityType , completed, returnedItems, error in
