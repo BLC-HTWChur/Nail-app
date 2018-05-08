@@ -26,8 +26,11 @@ class ViewController: UIViewController {
     @IBAction func showToken(_ sender: Any) {
         
         
-        let activityVC = UIActivityViewController(activityItems: ["org.moodle.moodle_mobile_app"], applicationActivities : nil)
+        let item = "org.moodle.moodle_mobile_app"
+        let singleton = false
+        print("IN PLUGIN SWIFT , singleton : \(singleton)")
         
+        let activityVC = UIActivityViewController(activityItems: [item, singleton.description], applicationActivities: nil)
         DispatchQueue.main.async {
             self.present(activityVC, animated: true, completion: nil)
         }

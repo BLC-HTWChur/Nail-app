@@ -13,8 +13,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var dataSource : [String: Any]?
-    var keysHeader : [String]?
-    var keysPayload : [String]?
+    var keys : [String]?
+    
+    
     
     
     override func viewDidLoad() {
@@ -24,10 +25,10 @@ class ProfileViewController: UIViewController {
         if dataSource == nil {
             return
         }
-        jsonDict = dataSource!["header"] as! [String:Any]
-        keysHeader = Array(jsonDict.keys) as [String]
-        jsonDict = dataSource!["payload"] as! [String: Any]
-        keysPayload = Array(jsonDict.keys) as [String]
+//        jsonDict = dataSource!["header"] as! [String:Any]
+        self.keys = Array(dataSource!.keys)
+        
+    
     
     }
 
@@ -54,28 +55,19 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (dataSource?.count)! + 1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        switch section {
-        case 0:
-            return 0
-        case 1:
-            return (keysHeader?.count)!
-        case 2:
-            return (keysPayload?.count)!
-        default:
-            return 0
-        }
+        let dic =  self.dataSource![(keys?.first)!] as! [String : Any]
+        return (dic.keys.count)
         
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "ID TOKEN"
+            return "Auth TOKEN"
         case 1:
             return "HEADER"
         case 2:
@@ -89,21 +81,14 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        
-        switch indexPath.section {
-        case 1:
-            let ds = dataSource!["header"] as! [String:Any]
-            
-            cell?.textLabel?.text = keysHeader?[indexPath.row]
-            cell?.detailTextLabel?.text = ds[keysHeader![indexPath.row]] as? String
-        case 2:
-            let ds = dataSource!["payload"] as! [String : Any]
-            
-            cell?.textLabel?.text = keysPayload?[indexPath.row]
-            cell?.detailTextLabel?.text = String (describing: ds[keysPayload![indexPath.row]]!)
-        default:
-            print("")
+        cell?.textLabel?.text = keys?[indexPath.row]
+
+        guard let data = dataSource![ keys![indexPath.row]] else {
+            return cell!
         }
+        
+        cell?.detailTextLabel?.text = String(describing : data)
+    
         
         return cell!
     }
